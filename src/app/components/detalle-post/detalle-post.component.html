@@ -1,1 +1,14 @@
-<p>detalle-post works!</p>
+<div *ngIf="post" class="flex flex-col">
+    <h2 class="text-5xl mb-5">
+        {{post.title}}
+    </h2>
+    <img [src]="post.img" [alt]="post.abstract" class="w-4/12 mb-5">
+    <p class="text-xl">
+        {{ post.content }}
+    </p>
+</div>
+<div *ngIf="!post">
+    <h2 class="text-5xl mb-10">No se encuentra el Post seleccionado</h2>
+    <a class="bg-emerald-400 text-black rounded-md hover:bg-emerald-200 hover:text-slate-600 focus:bg-emerald-500 focus:text-slate-900 portrait:mt-5 p-1 text-xl"
+    [routerLink]="['/posts']">Llevame de vuelta</a>
+</div>

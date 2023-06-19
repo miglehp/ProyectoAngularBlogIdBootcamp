@@ -18,4 +18,13 @@ export class PostsService {
 
   saveAll = (posts: Post[]) => localStorage.setItem('posts', JSON.stringify(posts));
 
+  getById = (id: number): Post | undefined => {
+    const strPosts = localStorage.getItem('posts');
+  if(strPosts){
+    const arrPosts = JSON.parse(strPosts);
+    return arrPosts.find((post: Post) => post.id === id);
+  } 
+  return undefined;
+}
+
 }

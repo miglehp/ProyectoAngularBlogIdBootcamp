@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/interfaces/post';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-detalle-post',
@@ -6,5 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./detalle-post.component.scss']
 })
 export class DetallePostComponent {
+
+  activatedRoute = inject(ActivatedRoute);
+  _postsService = inject(PostsService);
+
+  post: Post | undefined;
+
+  ngOnInit(){
+    this.activatedRoute.params.subscribe(params => {
+      this.post = this._postsService.getById(Number(params['postId']));
+    })
+  }
 
 }
