@@ -1,1 +1,23 @@
-<p>lista-posts works!</p>
+<div>
+  <!-- {{posts | json}} -->
+</div>
+<div
+  class="rounded-xl flex bg-zinc-800 mb-10 portrait:flex-col portrait:m-10"
+  *ngFor="let post of posts"
+>
+  <div class="img">
+    <img [src]="post.img" />
+  </div>
+  <div class="text flex flex-col justify-around p-5">
+    <h2>{{ post.title }}</h2>
+    <p>
+      {{ post.abstract }}
+    </p>
+    <button
+      class="bg-emerald-400 text-black rounded-md w-24 hover:bg-emerald-200 hover:text-slate-600 focus:bg-emerald-500 focus:text-slate-900 portrait:mt-5"
+      [routerLink]="['/posts', post.id]"
+    >
+      Leer más
+    </button>
+  </div>
+</div>

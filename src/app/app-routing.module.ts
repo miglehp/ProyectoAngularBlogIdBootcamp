@@ -6,9 +6,9 @@ import { DetallePostComponent } from './components/detalle-post/detalle-post.com
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'posts'},
+  {path: 'new', component: FormPostsComponent},
   {path: 'posts', component: ListaPostsComponent},
   {path: 'posts/:postId', component: DetallePostComponent},
-  {path: 'new', component: FormPostsComponent},
   {path: '**', redirectTo: 'posts'},
   
 ];
