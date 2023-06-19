@@ -13,11 +13,13 @@
     <p>
       {{ post.abstract }}
     </p>
-    <button
-      class="bg-emerald-400 text-black rounded-md w-24 hover:bg-emerald-200 hover:text-slate-600 focus:bg-emerald-500 focus:text-slate-900 portrait:mt-5"
-      [routerLink]="['/posts', post.id]"
-    >
-      Leer más
-    </button>
+    <div>
+      <button
+        class="bg-emerald-400 text-black rounded-md hover:bg-emerald-200 hover:text-slate-600 focus:bg-emerald-500 focus:text-slate-900 portrait:mt-5 p-1 px-3"
+        [routerLink]="['/posts', post.id]"
+      >
+        Leer más
+      </button>
+    </div>
   </div>
 </div>

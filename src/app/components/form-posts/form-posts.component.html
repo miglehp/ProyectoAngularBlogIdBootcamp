@@ -1,1 +1,21 @@
-<p>form-posts works!</p>
+<form [formGroup]="formPost">
+  <div class="mb-3 flex flex-col">
+    <label for="title">Título:</label>
+    <input class="bg-zinc-900 text-zinc-200" type="text" formControlName="title" />
+  </div>
+  <div class="mb-3 flex flex-col">
+    <label for="content">Contenido:</label>
+    <textarea class="bg-zinc-900 text-zinc-200" formControlName="content" cols="30" rows="6"></textarea>
+  </div>
+  <div class="mb-3 flex flex-col">
+    <label for="abstract">Resumen: </label>
+    <textarea class="bg-zinc-900 text-zinc-200" formControlName="abstract" cols="30" rows="2"></textarea>
+  </div>
+  <div class="mb-3 flex flex-col">
+    <label for="img">Enlace de la imagen:</label>
+    <input class="bg-zinc-900 text-zinc-200" type="text" formControlName="img" />
+  </div>
+  <button class="bg-emerald-400 text-black rounded-md hover:bg-emerald-200 hover:text-slate-600 focus:bg-emerald-500 focus:text-slate-900 portrait:mt-5 p-1 px-3 text-xl mb-5">
+    Enviar
+  </button>
+</form>

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from 'src/app/interfaces/post';
 import { PostsService } from 'src/app/services/posts.service';
