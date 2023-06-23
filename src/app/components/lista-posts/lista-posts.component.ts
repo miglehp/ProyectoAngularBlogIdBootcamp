@@ -21,6 +21,7 @@ export class ListaPostsComponent {
   ngOnInit(){
     // this._postService.saveAll(POSTS) // correr este codigo la primera vez para tener posts en el local storage
     this.posts = this.getPosts();
+    this.posts?.reverse();
   }
 
   getPosts(): Post[] | null {

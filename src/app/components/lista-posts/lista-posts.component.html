@@ -5,7 +5,7 @@
   class="rounded-xl flex bg-zinc-800 mb-10 portrait:flex-col portrait:m-10"
   *ngFor="let post of posts"
 >
-  <div class="img">
+  <div class="img max-w-xs h-auto">
     <img [src]="post.img" />
   </div>
   <div class="text flex flex-col justify-around p-5">
