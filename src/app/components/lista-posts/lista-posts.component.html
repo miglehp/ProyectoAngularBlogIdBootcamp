@@ -1,25 +1,44 @@
-<div>
-  <!-- {{posts | json}} -->
-</div>
-<div
-  class="rounded-xl flex bg-zinc-800 mb-10 portrait:flex-col portrait:m-10"
-  *ngFor="let post of posts"
->
-  <div class="img max-w-xs h-auto">
-    <img [src]="post.img" />
-  </div>
-  <div class="text flex flex-col justify-around p-5">
-    <h2>{{ post.title }}</h2>
-    <p>
-      {{ post.abstract }}
-    </p>
-    <div>
-      <button
-        class="bg-emerald-400 text-black rounded-md hover:bg-emerald-200 hover:text-slate-600 focus:bg-emerald-500 focus:text-slate-900 portrait:mt-5 p-1 px-3"
-        [routerLink]="['/posts', post.id]"
-      >
-        Leer más
-      </button>
+<div *ngIf="posts">
+  <div
+    class="rounded-2xl flex bg-zinc-800 mb-10 portrait:flex-col portrait:m-10"
+    *ngFor="let post of posts"
+  >
+    <div class="img max-w-xs h-auto">
+      <img [src]="post.img" />
+    </div>
+    <div class="text flex flex-col justify-around p-5">
+      <h2>{{ post.title }}</h2>
+      <p>
+        {{ post.abstract }}
+      </p>
+      <div>
+        <button
+          class="bg-emerald-400 text-black rounded-md hover:bg-emerald-200 hover:text-slate-600 focus:bg-emerald-500 focus:text-slate-900 portrait:mt-5 p-1 px-3"
+          [routerLink]="['/posts', post.id]"
+        >
+          Leer más
+        </button>
+      </div>
     </div>
   </div>
+</div>
+<div *ngIf="!posts" class="flex flex-col gap-5">
+  <p class="text-4xl leading-loose text-center">
+    ¡Ups! Parece que ya no hay más posts por aquí,
+  </p>
+  <p class="text-xl leading-loose text-center">
+    Pero no te preocupes, ¡tenemos algo genial para ti! En lugar de dejarte con
+    las manos vacías, te vamos a llevar a una página especial donde podrás crear
+    tus propios posts nuevos y emocionantes. ¡Será como un parque de diversiones
+    digital! Así que, ¡no te preocupes! Dale clic al enlace de redirección y
+    prepárate para sumergirte en una aventura de creación de posts alucinante.
+    ¡No hay límites para tu creatividad, así que diviértete y comparte cosas
+    increíbles con el mundo!
+  </p>
+  <button 
+  class="my-8 px-8 py-4 bg-emerald-400 w-fit text-black rounded-lg mx-auto text-xl font-bold hover:bg-emerald-300 hover:shadow-inner"
+  [routerLink]="['../new']"
+  >
+    Llévame allá
+  </button>
 </div>
